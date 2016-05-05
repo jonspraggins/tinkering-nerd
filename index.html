@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<title>Stunning-Waffle</title>
+</head>
+<body>
+    <header>
+    <div class="logo-wrap">
+      <h1><a href="index.html">SW</a></h1>
+    </div>
+    <nav role="navigation">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <div>
+                        Search
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+	<br><br>
+<script type="text/javascript" src="js/search.js"></script>
+<script type="text/javascript">
+function ptCheck() {
+    if (document.getElementById('termchk').checked) 
+    {
+        document.getElementById('ifterm').style.display = 'block';
+        document.getElementById('ifperson').style.display = 'none';
+    }
+    else
+    { 
+    	document.getElementById('ifterm').style.display = 'none';
+    	document.getElementById('ifperson').style.display = 'block';
+	}
+}
+</script>
+<section id="content-main" class="wrapper clear">
+	<h2>One Stop Search Tool</h2>
+	<p>This is a pet project of sorts.  It's designed to do help a researcher on a specific person or topic.  It's all coded in Javascript, mainly because I don't know how to do all the cool database stuff that would probably make this a more elegant process.  It opens multiple tabs based on the number of sites you wish to search on, so you may have to temporarily trust this site/allow pop-ups in your respective browsers.  This was the only way I could think of to return the relevant data.</p>
+	<p>Of course, I don't retain any data on the topics or people you choose to search on.  This site merely formats the request into a query and passes that query to each site.</p>
+	<p>If anyone can think of a better way to develop this concept, please let me know.  I'd like to improve this tool beyond adding more sites.</p>
+</section>
+
+<section id="content-main" class="wrapper clear">
+	<h2>Step One: Enter Data Fields</h2>
+	<br>
+	<div class="buttonholder">	
+		Term <input type="radio" onclick="javascript:ptCheck();" name="pt" id="termchk"> 
+		Person <input type="radio" onclick="javascript:ptCheck();" name="pt" id="personchk" checked><br><br/>
+ 		<form name="fields">
+    	<div id="ifterm" style="display:none">
+		<ul>
+			<li><label>Search Term</label>
+		<span>
+			<input type="text" name="query" maxlength="255" size="70"/>
+		</span><br/>
+    <p>Some search queries below do not accept a search term.  These will be skipped automatically, even if a site was selected.</p>
+		</li>
+		</ul>
+    	</div>
+    	<div id="ifperson" style="display:block">    
+			<ul>
+			<li><label>Name</label>
+		<span>
+			<input type="text" name="given" maxlength="255" size="10" placeholder="First"/>
+		</span>
+		<span>
+			<input type="text" name="middle" maxlength="255" size="10" placeholder="Middle"/>
+		</span>
+		<span>
+			<input type="text" name="sur" maxlength="255" size="14" placeholder="Last"/>
+		</span> 
+		</li>		
+		<li><label>Address</label>
+			<input type="text" name="city" placeholder="City"/>
+			<select name="state"> 
+				<option selected="selected" value=""></option>
+				<option value="AL">Alabama</option>
+				<option value="AK">Alaska</option>
+				<option value="AZ">Arizona</option>
+				<option value="AR">Arkansas</option>
+				<option value="CA">California</option>
+				<option value="CO">Colorado</option>
+				<option value="CT">Connecticut</option>
+				<option value="DE">Delaware</option>
+				<option value="DC">District of Columbia</option>
+				<option value="FL">Florida</option>
+				<option value="GA">Georgia</option>
+				<option value="HI">Hawaii</option>
+				<option value="ID">Idaho</option>
+				<option value="IL">Illinois</option>
+				<option value="IN">Indiana</option>
+				<option value="IA">Iowa</option>
+				<option value="KS">Kansas</option>
+				<option value="KY">Kentucky</option>
+				<option value="LA">Louisiana</option>
+				<option value="ME">Maine</option>
+				<option value="MD">Maryland</option>
+				<option value="MA">Massachusetts</option>
+				<option value="MI">Michigan</option>
+				<option value="MN">Minnesota</option>
+				<option value="MS">Mississippi</option>
+				<option value="MO">Missouri</option>
+				<option value="MT">Montana</option>
+				<option value="NE">Nebraska</option>
+				<option value="NV">Nevada</option>
+				<option value="NH">New Hampshire</option>
+				<option value="NJ">New Jersey</option>
+				<option value="NM">New Mexico</option>
+				<option value="NY">New York</option>
+				<option value="NC">North Carolina</option>
+				<option value="ND">North Dakota</option>
+				<option value="OH">Ohio</option>
+				<option value="OK">Oklahoma</option>
+				<option value="OR">Oregon</option>
+				<option value="PA">Pennsylvania</option>
+				<option value="RI">Rhode Island</option>
+				<option value="SC">South Carolina</option>
+				<option value="SD">South Dakota</option>
+				<option value="TN">Tennessee</option>
+				<option value="TX">Texas</option>
+				<option value="UT">Utah</option>
+				<option value="VT">Vermont</option>
+				<option value="VA">Virginia</option>
+				<option value="WA">Washington</option>
+				<option value="WV">West Virginia</option>
+				<option value="WI">Wisconsin</option>
+				<option value="WY">Wyoming</option>
+				<option value="AS">American Samoa</option>
+				<option value="GU">Guam</option>
+				<option value="MP">Northern Mariana Islands</option>
+				<option value="PR">Puerto Rico</option>
+				<option value="UM">US Minor Outlying Islands</option>
+				<option value="VI">Virgin Islands</option>
+				<option value="AA">Armed Forces Americas</option>
+				<option value="AP">Armed Forces Pacific</option>
+				<option value="AE">Armed Forces Others</option>
+			</select>
+		</li>
+		<li><label>Phone</label>
+		        <input type="text" placeholder="Area" name="area" maxlength="3" size="5"/>
+       			<input type="text" placeholder="Prefix" name="prefix" maxlength="3" size="5"/>
+        		<input type="text" placeholder="Line" name="line" maxlength="4" size="6"/>
+        	</li>			
+		<li><label>Username</label>
+			<input type="text" name="username" maxlength="255" placeholder="Username"/> 
+		</li>		
+		<li><label>Email Address</label>
+			<input type="text" name="email" maxlength="255" placeholder="Email"/> 
+		</li>
+			</ul>
+		</form>	
+			</div>
+    	</div>
+    	</section>
+<section id="content-main" class="wrapper">
+    	<h2>Step Two: Pick your sites</h2>
+    	<p>Most Browsers will only open up to 10 tabs at a time.  Any number in parentheses indicates the total number of tabs that one selection can open for that selection if all fields are used, otherwise it's just one search per selection.<br>Some searches will open multiple instances of the same site, but are actually using different search criteria.  Other searches may not be applicable to the criteria entered, so that site may be skipped.</p>
+		<hr>
+		<div class="column">
+		<ul>
+      <ol><input id="gwebcb" type="checkbox" name="google"></input><a href="https://www.google.com" target="_blank">Google Search</a></ol>
+      <ol><input id="gimgcb" type="checkbox" name="google"></input><a href="https://images.google.com" target="_blank">Google Images</a></ol>
+      <ol><input id="ggrpcb" name="google" type="checkbox"></input><a href="https://groups.google.com/groups/search" target="_blank">Google Groups</a></ol>
+      <ol><input id="gnwscb" name="google" type="checkbox"></input><a href="https://news.google.com/" target="_blank">Google News</a></ol>
+      <ol><input id="gshpcb" name="google" type="checkbox"></input><a href="https://www.google.com/shopping" target="_blank">Google Shopping</a></ol>
+      <ol><input id="gbkscb" name="google" type="checkbox"></input><a href="https://books.google.com/" target="_blank">Google Books</a></ol>
+      <ol><input id="gslrcb" name="google" type="checkbox"></input><a href="https://scholar.google.com/" target="_blank">Google Scholar</a></ol>
+      <ol><input id="gtndcb" name="google" type="checkbox"></input><a href="https://trends.google.com/" target="_blank">Google Trends</a></ol>
+      <ol><input id="gvidcb" name="google" type="checkbox"></input><a href="https://www.google.com/videohp?gws_rd=ssl" target="_blank">Google Video</a></ol>
+      <ol><input id="ytcb" name="MSE" type="checkbox"></input><a href="https://www.youtube.com/" target="_blank">YouTube</a></ol>
+      <ol><input id="bingcb" name="MSE" type="checkbox"></input><a href="http://bing.com" target="_blank">Bing</a></ol>
+      <ol><input id="bnwscb" name="MSE" type="checkbox"></input><a href="http://bing.com/news" target="_blank">Bing News</a></ol>			
+      <ol><input id="yahocb" name="MSE" type="checkbox"></input><a href="http://yahoo.com" target="_blank">Yahoo</a></ol>
+      <ol><input id="ddgcb" name="MSE" type="checkbox"></input><a href="http://duckduckgo.com" target="_blank">DuckDuckGo</a></ol>
+      <ol><input id="hmmcb" name="DV" type="checkbox"></input><a href="http://www.howmanyofme.com" target="_blank">How Many Of Me</a></ol>
+      <ol><input id="pplsmcb" name="DV" type="checkbox"></input><a href="https://www.peoplesmart.com" target="_blank">PeopleSmart</a></ol>
+      <ol><input id="whpgcb" name="DV" type="checkbox"></input><a href="http://www.whitepages.com" target="_blank">Whitepages</a></ol>
+      <ol><input id="thstmcb" name="DV" type="checkbox"></input><a href="http://www.thatsthem.com" target="_blank">That's Them</a></ol>
+      <ol><input id="revgcb" name="DV" type="checkbox"></input><a href="http://www.reversegenie.com" target="_blank">ReverseGenie</a></ol>
+      <ol><input id="spokcb" name="DV" type="checkbox"></input><a href="http://www.spokeo.com" target="_blank">Spokeo</a></ol>
+      <ol><input id="kgbpcb" name="DV" type="checkbox"></input><a href="http://www.kgbpeople.com" target="_blank">KGB People</a></ol>
+      <ol><input id="radrcb" name="DV" type="checkbox"></input><a href="https://radaris.com" target="_blank">Radaris</a></ol>
+      <ol><input id="intlcb" name="DV" type="checkbox"></input><a href="https://www.intelius.com" target="_blank">Intelius</a></ol>
+      <ol><input id="piplcb" name="DV" type="checkbox"></input><a href="https://pipl.com" target="_blank">PIPL</a></ol>
+      <ol><input id="pkyucb" name="DV" type="checkbox"></input><a href="http://peekyou.com" target="_blank">PeekYou</a></ol>
+      <ol><input id="tndgtcb" name="DV" type="checkbox"></input><a href="http://10digits.us" target="_blank">10Digits</a></ol>
+      <ol><input id="zbscb" name="DV" type="checkbox"></input><a href="http://www.zabasearch.com/people/" target="_blank">ZabaSearch</a></ol>
+      <ol><input id="ussrhcb" name="DV" type="checkbox"></input><a href="https://www.ussearch.com/search/people/" target="_blank">US Search</a></ol>
+      <ol><input id="foocb" name="DV" type="checkbox"></input><a href="http://www.411.com/" target="_blank">411.com</a></ol>
+      <ol><input id="fooicb" name="DV" type="checkbox"></input><a href="http://www.411.info/" target="_blank">411.info</a></ol>
+      <ol><input id="acccb" name="DV" type="checkbox"></input><a href="http://www.accutellus.com" target="_blank">Accutellus</a></ol>
+      <ol><input id="cicb" name="DV" type="checkbox"></input><a href="http://www.census-info.us" target="_blank">Census-Info</a></ol>
+      <ol><input id="abgcb" name="DV" type="checkbox"></input><a href="hhttp://www.advancedbackgroundchecks.com" target="_blank">Advanced Background Checks</a></ol>		
+      <ol><input id="lnkdcb" name="SM" type="checkbox"></input><a href="http://linkedin.com" target="_blank">LinkedIn</a></ol>
+      <ol><input id="fbcb" name="SM" type="checkbox"></input><a href="http://facebook.com" target="_blank">Facebook</a></ol>
+      <ol><input id="twrcb" name="SM" type="checkbox"></input><a href="http://twitteraccountdetails.com" target="_blank">Twitter</a></ol>
+      <ol><input id="wtcb" name="SM" type="checkbox"></input><a href="http://www.whotalking.com" target="_blank">WhoTalking</a></ol>
+      <ol><input id="ircb" name="SM" type="checkbox"></input><a href="http://www.icerocket.com" target="_blank">Meltwater IceRocket</a></ol>
+      <ol><input id="fwcb" name="SM" type="checkbox"></input><a href="http://www.followerwonk.com" target="_blank">FollowerWonk</a></ol>
+      <ol><input id="wmcb" name="SM" type="checkbox"></input><a href="http://www.webmii.com" target="_blank">WebMii</a></ol>
+      <ol><input id="fpbdcb" name="SM" type="checkbox"></input><a href="http://www.flipboard.com" target="_blank">FlipBoard</a></ol>
+      <ol><input id="nwslcb" name="NM" type="checkbox"></input><a href="http://www.newslookup.com" target="_blank">NewsLookup</a></ol>
+      <ol><input id="rddtcb" name="NM" type="checkbox"></input><a href="https://www.reddit.com/search" target="_blank">Reddit</a></ol>
+      <ol><input id="efbcb" name="NM" type="checkbox"></input><a href="http://www.efabula.com" target="_blank">eFabula</a></ol>
+      <ol><input id="emshcb" name="Email" type="checkbox"></input><a href="http://www.emailsherlock.com" target="_blank">Email Sherlock</a></ol>
+      <ol><input id="brcb" name="Other" type="checkbox"></input><a href="http://www.boardreader.com" target="_blank">BoardReader</a></ol>
+      <ol><input id="actvcb" name="Other" type="checkbox"></input><a href="http://results.active.com" target="_blank">Active.com Race Results</a></ol>
+      <ol><input id="pstcb" name="Other" type="checkbox"></input><a href="http://www.privacystar.com" target="_blank">Privacy Star</a></ol>
+      <ol><input id="wcdcb" name="Other" type="checkbox"></input><a href="https://whocalld.com" target="_blank">WhoCalld</a></ol>
+      <ol><input id="mrnmcb" name="Other" type="checkbox"></input><a href="http://www.mrnumber.com/" target="_blank">Mr. Number</a></ol>
+      <ol><input id="trclcb" name="Other" type="checkbox"></input><a href="http://www.truecaller.com/" target="_blank">TrueCaller</a></ol>
+      <ol><input id="okcallcb" name="Other" type="checkbox"></input><a href="http://www.okcaller.com/" target="_blank">OKCaller</a></ol>	
+		</ul>
+	</div>
+	<br>
+	<div class="btn-block">
+		<form>
+			<button class="btn" type="button" onClick="checkGoog(true);">Google Searches</button>
+			<button class="btn" type="button" onClick="checkMSE(true);">Other Search Engines</button>
+			<button class="btn" type="button" onClick="checkDV(true);">Data Vendors</button>
+			<button class="btn" type="button" onClick="checkSM(true);">Social Media</button>
+			<button class="btn" type="button" onClick="checkNM(true);">Forums & News</button>
+			<button class="btn" type="button" onClick="checkEmail(true);">Email</button>
+			<button class="btn" type="button" onClick="checkOther(true);">Other</button><br>
+			<button class="btn btn-primary" type="button" onClick="checkGoog(false), checkEmail(false), checkNM(false), checkSM(false), checkDV(false), checkMSE(false), checkOther(false);">Clear All</button>
+			<button class="btn btn-primary" type="submit" onclick="doSearch(fields.query.value, fields.given.value, fields.middle.value, fields.sur.value, fields.city.value, fields.state.value, fields.area.value, fields.prefix.value, fields.line.value, fields.email.value, fields.username.value); return false;">Search</button>
+		</form>
+	</div>
+	</section>
+<script type="text/javascript">
+
+function ptCheck() {
+    if (document.getElementById('termchk').checked) 
+    {
+        document.getElementById('ifterm').style.display = 'block';
+        document.getElementById('ifperson').style.display = 'none';
+    }
+    else
+    { 
+    	document.getElementById('ifterm').style.display = 'none';
+    	document.getElementById('ifperson').style.display = 'block';
+	}
+}
+
+</script>
+<script type="text/javascript" src="js/search.js"></script>
+</section>
+    <footer class="wrapper">
+            <p>Stunning-Waffle</p>
+    </footer>
+</body>
+</html>
