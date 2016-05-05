@@ -1,4 +1,4 @@
-# stunning-waffle
+# Tinkering-Nerd
 ## Description
 <p>This is a pet project of sorts.  It's designed to do help a researcher on a specific person or topic.</p>
 <p>Put simply, takes the input from the forms and passes the query-string to select websites</p>
